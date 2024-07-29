@@ -173,8 +173,8 @@ def update_data(conn, df, changes):
 """
 # :shopping_bags: Fun Raiser
 
-**Welcome to GK Bday Fun Raiser!  Thank you for supporting a great cause.  Please, drink like lives depend on it (they do)**
-This page reads and writes directly from/to our inventory database.
+**Welcome to GK Bday Fun Raiser!  Thank you for supporting a great cause.**  Please, drink like lives depend on it (they do)
+
 """
 
 st.info(
