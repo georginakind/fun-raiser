@@ -5,6 +5,11 @@ import sqlite3
 import streamlit as st
 import altair as alt
 import pandas as pd
+from vega_datasets import data
+
+source = data.barley()
+
+st.bar_chart(source, x="variety", y="yield", color="site", horizontal=True)
 
 
 # Set the title and favicon that appear in the Browser's tab bar.
@@ -158,3 +163,4 @@ st.subheader("Units left", divider="red")
 
 # -----------------------------------------------------------------------------
 
+st.bar_chart(source, x="variety", y="yield", color="site", horizontal=True)
