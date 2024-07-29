@@ -157,5 +157,5 @@ st.subheader("Units left", divider="red")
 ""
 
 # -----------------------------------------------------------------------------
-st.bar_chart(df, x="variety", y="yield", color="site", horizontal=True)
+st.bar_chart(df, x="item_name", y="price", color="item_name", horizontal=True)
 
