@@ -41,10 +41,7 @@ def initialize_data(conn):
             item_name TEXT,
             price REAL,
             units_sold INTEGER,
-            units_left INTEGER,
-            cost_price REAL,
-            reorder_point INTEGER,
-            description TEXT
+            units_left INTEGER
         )
         """
     )
@@ -55,7 +52,7 @@ def initialize_data(conn):
             (item_name, price, units_sold, units_left)
         VALUES
             -- Beverages
-            ('Bottled Water (500ml)', 1.50, 115, 15, 0.80, 16, 'Hydrating bottled water'),
+            ('Bottled Water (500ml)', 1.50, 115, 15),
            
         """
     )
@@ -79,7 +76,7 @@ def load_data(conn):
             "item_name",
             "price",
             "units_sold",
-            "units_left",
+            "units_left"
         ],
     )
 
@@ -106,10 +103,7 @@ def update_data(conn, df, changes):
                 item_name = :item_name,
                 price = :price,
                 units_sold = :units_sold,
-                units_left = :units_left,
-                cost_price = :cost_price,
-                reorder_point = :reorder_point,
-                description = :description
+                units_left = :units_left
             WHERE id = :id
             """,
             rows,
@@ -119,9 +113,9 @@ def update_data(conn, df, changes):
         cursor.executemany(
             """
             INSERT INTO inventory
-                (id, item_name, price, units_sold, units_left, cost_price, reorder_point, description)
+                (id, item_name, price, units_sold, units_left)
             VALUES
-                (:id, :item_name, :price, :units_sold, :units_left, :cost_price, :reorder_point, :description)
+                (:id, :item_name, :price, :units_sold, :units_left)
             """,
             (defaultdict(lambda: None, row) for row in changes["added_rows"]),
         )
@@ -142,7 +136,8 @@ def update_data(conn, df, changes):
 """
 # :clinking_glasses: Fun Raiser
 
-**Welcome to GK Bday Fun Raiser!  Thank you for supporting a great cause.**  Please, drink like lives depend on it (they do)
+**Welcome to GK Bday Fun Raiser!  Thank you for supporting a great cause.**  
+Please, drink like lives depend on it (they do)
 
 """
 
