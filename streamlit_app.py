@@ -9,7 +9,7 @@ from vega_datasets import data
 
 source = data.barley()
 
-st.bar_chart(source, x="variety", y="yield", color="site", horizontal=True)
+st.bar_chart(df, x="variety", y="yield", color="site", horizontal=True)
 
 
 # Set the title and favicon that appear in the Browser's tab bar.
