@@ -52,7 +52,7 @@ def initialize_data(conn):
             (item_name, price, units_sold, units_left)
         VALUES
             -- Beverages
-            ('Bottled Water (500ml)', 1.50, 115, 15),
+            ('Bottled Water (500ml)', 1.50, 115, 15)
            
         """
     )
